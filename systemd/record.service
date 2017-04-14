@@ -1,0 +1,12 @@
+[Unit]
+Requires=network-online.target remote-fs.target zfs-mount.service zfs-import-cache.service
+After=network-online.target remote-fs.target zfs-mount.service zfs-import-cache.service
+
+[Service]
+Type=simple
+ExecStart=/home/foo/record.script
+User=foo
+
+[Install]
+WantedBy=multi-user.target
+

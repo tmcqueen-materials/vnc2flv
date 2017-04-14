@@ -1,0 +1,22 @@
+#!/bin/bash
+BASEDIR="/array/vnc"
+PASSWD="/home/foo/bar.vnc"
+HOSTNAME=192.168.0.1
+PORT=5900
+# Rate is frames per second
+RATE=1
+while :
+do
+NOW=$(date '+%Y-%B-%d-%H\:%M' | xargs)
+FILE="$BASEDIR/$NOW.flv"
+(echo > "/dev/tcp/$HOSTNAME/$PORT") >/dev/null 2>&1
+HOSTDOWN=$?
+if [ -e "$FILE" ] || [ "$HOSTDOWN" != 0 ]; then
+# wait for next minute, do not overwrite
+sleep 60
+else
+echo "Starting new FLV: $FILE"
+timeout 3600s /usr/bin/flvrec.py -P "$PASSWD" -r "$RATE" -K 60 -o "$FILE" "$HOSTNAME" "$PORT"
+sleep 5
+fi
+done
