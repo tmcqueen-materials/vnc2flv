@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: vnc2flv
+Version: 20100207
+Summary: Screen recording tool that captures a VNC session and saves as FLV
+Home-page: http://www.unixuser.org/~euske/python/vnc2flv/index.html
+Author: Yusuke Shinyama
+Author-email: yusuke at cs dot nyu dot edu
+License: MIT/X
+Description: Vnc2flv is a screen recorder. It captures a VNC desktop session and saves it as a Flash Video (FLV) file.
+Keywords: vnc,flv,video,screen recorder
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
